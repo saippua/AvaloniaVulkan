@@ -1,0 +1,12 @@
+Simple FPS widget with vulkan interoperability done.
+
+Next could be:
+- Send information about surface size to vulkan API.
+	- Currently, vulkan can read the pixel size of the display from the surface, however in other cases like with high DPI monitors, it wont work.
+	- UI scaling in windows could be used to test this maybe
+- [DONE] spawn/despawn the vulkan window and check that we can attach and detach the instance correctly without memory leaks.
+	- Possibility to spawn more than one vulkan viewport!
+- Improve the FPS widget. Something like the network traffic plot in wireshark might be cool.
+- Docking? Probably too early for that.
+- List of shaders in GUI and hotloading in vulkan.
+- Refactor MVVM properly. This is important for later. We also need to rename the project, and think of how to package the frontend with the C++ backend

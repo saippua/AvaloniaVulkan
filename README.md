@@ -6,13 +6,11 @@ Some time ago I was prototyping some game engine editor type projects. I eventua
 
 ## Implementation explanation
 <img align="right" width="350" height="334" src="https://github.com/user-attachments/assets/9f2eb69d-e383-4698-923f-e159680ba57a">
-The Vulkan renderer is a C++ library that interfaces with C# through interop functions. There are functions for creating and destroying the vulkan renderer, and also functions for attaching or detaching the render canvas in Avalonia. The Vulkan renderer is intialized lazily the first time the render canvas is attached. After this, the engine remains active in the background and the render canvas can be attached/detached at will. Standard output is propagated out of the unmanaged code.
+The solution consists of two components. The Vulkan renderer, which is a C++ library and the .NET frontend, which handles the GUI with Avalonia. The components communicate through an interop interface which allows the C# frontend to interact with the unmanaged backend.
+
+The interface defines functions for creating and destroying the vulkan renderer, and also functions for attaching or detaching the render canvas in Avalonia. The Vulkan renderer is intialized lazily the first time the render canvas is attached. After this, the engine remains active in the background and the render canvas can be attached/detached at will. Standard output is propagated out of the unmanaged code.
 
 Currently it's only for windows. The render canvas is built on top of the Win32 API.
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 ## Usage
